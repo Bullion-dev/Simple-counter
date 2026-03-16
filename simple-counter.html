@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/output.css">
+        <title>Simple Counter</title>
+    </head>
+    <body class="bg-slate-300 min-h-screen flex items-center justify-center">
+<div class="flex flex-col items-center bg-slate-200 px-10 py-20 border-4 rounded-md">
+        <label id="display" class="text-4xl text-black text-green-600 text-red-600 pb-10">0</label>
+        <div class="flex items-center justify-center">
+            <button onclick="plus()" id="pos-btn" class="rounded p-8 text-zinc-900 bg-amber-50 hover:bg-amber-100">
+               +
+            </button>
+            <button onclick="minus()" id="neg-btn" class="ml-5 rounded p-8 text-zinc-900 bg-red-50 hover:bg-red-100">-</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+    </body>
+</html>

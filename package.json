@@ -1,0 +1,12 @@
+{
+  "name": "restadmin",
+  "version": "1.0.0",
+  "description": "Restaurant admin dashboard",
+  "scripts": {
+    "dev":   "tailwindcss -i ./src/input.css -o ./css/output.css --watch",
+    "build": "tailwindcss -i ./src/input.css -o ./css/output.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}
