@@ -1,8 +1,12 @@
+const savedCount= localStorage.getItem("myCount");
+let count= savedCount ? Number(savedCount) : 0;
+
+// 1. GRAB THE ELEMENTS (The things we need to change)
 const Display = document.getElementById("display");
 const PosBtn = document.getElementById("pos-btn");
 const NegBtn = document.getElementById("neg-btn");
-// 2. STATE (The data)
-let count = 0;
+const stepInput = document.getElementById("step-input");
+
 
 // 3. THE "BRAINS" (This runs every time the number changes)
 function render() {
@@ -20,15 +24,30 @@ function render() {
     } else {
         Display.classList.add("text-black");
     }
+
+    // Fourth, save the new number in localStorage
+    localStorage.setItem("myCount", count);
 }
+
+render(); // Run the render function once at the start to show the initial state
 
 // 4. THE ACTIONS (The buttons)
 function plus() {
-    count++;
+    if (count >= 100){
+        count = 100;
+    }else{
+    const step= Number(stepInput.value);
+    count+= step;
     render();
+    }
 }
 
 function minus() {
-    count--;
+    if (count <= -100){
+        count = -100;
+    }else{
+    const step= Number(stepInput.value);
+    count-= step;
     render();
+    }
 }
